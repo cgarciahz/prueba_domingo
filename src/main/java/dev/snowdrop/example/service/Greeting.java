@@ -19,7 +19,8 @@ package dev.snowdrop.example.service;
 public class Greeting {
 
     public static final String FORMAT = "Hello, %s!";
-
+    String variable = System.getenv().get("variable_entorno_uno");
+    
     private final String content;
 
     public Greeting() {
@@ -27,7 +28,7 @@ public class Greeting {
     }
 
     public Greeting(String content) {
-        this.content = content;
+        this.content = content + " " + variable;
     }
 
     public String getContent() {
